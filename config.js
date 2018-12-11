@@ -1,0 +1,1 @@
+export const URL_API_ANA = 'http://telemetriaws1.ana.gov.br/ServiceANA.asmx/DadosHidrometeorologicos?codEstacao=66945000&dataInicio=DATA_INICIO&dataFim=DATA_FIM';
