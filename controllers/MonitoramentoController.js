@@ -20,16 +20,14 @@ class MonitoramentoController {
                     xml2js.parseString(resposta.data, (erro, json) => {
                         let dados = xpath.find(json, "//DadosHidrometereologicos");
 
-                        /*const pegaHora = (dataHorario) => {
-                           
-                        };*/
+                        const pegaHora = (leitura) => leitura["DataHora"][0].substring(10, 16);
                         
                         let resultado = [];
                         dados.forEach(dado => {
                             let elemento = {
                                 nivel: dado["Nivel"][0],
                                 chuva: dado["Chuva"][0],
-                                dataHorario: dado["DataHora"][0].substring(10, 16)
+                                dataHorario: pegaHora(dado)
                             };
                             
                             resultado.push(elemento);
